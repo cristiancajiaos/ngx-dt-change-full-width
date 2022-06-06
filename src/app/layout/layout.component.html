@@ -1,10 +1,31 @@
-<ngx-datatable
-  class="bootstrap"
-  [rows]="rows"
-  [columns]="columns"
-  [limit]="5"
-  [headerHeight]="50"
-  [rowHeight]="50"
-  [footerHeight]="50"
-  [scrollbarH]="true">
-</ngx-datatable>
+<div class="row">
+  <div class="col-12 col-lg-4">
+    <form>
+      <label>Tamaño</label>
+      <select class="form-control" name="tamannio" [(ngModel)]="tamannio">
+        <option *ngFor="let selTamannio of tamannios" [value]="selTamannio.value">
+          {{selTamannio.name}}
+        </option>
+      </select>
+    </form>
+  </div>
+</div>
+
+<p>Tamaño: {{tamannio}}</p>
+
+<hr/>
+
+<div class="row">
+  <div class="col-12 col-lg-{{tamannio}}">
+    <ngx-datatable
+      class="bootstrap"
+      [rows]="rows"
+      [columns]="columns"
+      [limit]="5"
+      [headerHeight]="50"
+      [rowHeight]="50"
+      [footerHeight]="50"
+      [scrollbarH]="true">
+    </ngx-datatable>
+  </div>
+</div>

@@ -154,7 +154,18 @@ export class LayoutComponent implements OnInit {
     { name: 'Reparto', prop: 'reparto', width: 400}
   ];
 
+  tamannios = [
+    {name: 'Tres', value: 3},
+    {name: 'Cuatro', value: 4},
+    {name: 'Seis', value: 6},
+    {name: 'Doce', value: 12}
+  ];
+
+  tamannio?: any;
+
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.tamannio = this.tamannios[0].value;
+  }
 }
